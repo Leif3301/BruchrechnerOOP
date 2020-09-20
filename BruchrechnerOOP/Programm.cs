@@ -18,7 +18,7 @@ namespace BruchrechnerOOP
             Console.WriteLine("Ergebnis Addition: " + bruch1.Addiere(bruch2).Ausgabe());
             Console.WriteLine("Ergebnis Subtraktion: " + bruch1.Subtrahiere(bruch2).Ausgabe());
 
-            Console.ReadKey(true);
+            Console.ReadKey(true); // TODO: kommentieren
         }
     }
 }

@@ -78,6 +78,7 @@ namespace BruchrechnerOOP
 
             int ggt = BerechneGgt(ergebnisZaehler, ergebnisNenner);
 
+
             ergebnisZaehler /= ggt;
             ergebnisNenner /= ggt;
 
@@ -143,7 +144,7 @@ namespace BruchrechnerOOP
             return ergebnis;
         }
 
-        public string Ausgabe()
+        public string GebeAus()
         {
             return Zaehler + " / " + Nenner;
         }

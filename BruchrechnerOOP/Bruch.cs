@@ -1,4 +1,12 @@
-﻿using System;
+﻿/*
+ Autor:         Dennis Frank
+ Dateiname:     Bruch.cs
+ Klasse:        IA219
+ Datum:         20.09.2020
+ Beschreibung:  Diese Klasse definiert einen Bruch
+ Änderung:      23.09.2020
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -7,10 +15,15 @@ using System.Threading.Tasks;
 
 namespace BruchrechnerOOP
 {
+    /**
+     * <summary>
+     * Diese Klasse definiert einen Bruch
+     * </summary>
+     */
     class Bruch
     {
-        private int zaehler;
-        private int nenner;
+        private int _zaehler;
+        private int _nenner;
 
         public int Zaehler { get; set; }
         public int Nenner { get; set; }

@@ -15,11 +15,6 @@ using System.Threading.Tasks;
 
 namespace BruchrechnerOOP
 {
-    /**
-     * <summary>
-     * Diese Klasse definiert einen Bruch
-     * </summary>
-     */
     class Bruch
     {
         private int _zaehler;

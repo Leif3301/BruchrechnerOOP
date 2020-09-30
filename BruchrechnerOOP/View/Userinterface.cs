@@ -19,7 +19,6 @@ namespace BruchrechnerOOP.View
         private Bruch _bruch;
         private string _text;
 
-        public Bruch Bruch { get; set; }
         public string Text { get; set; }
 
         protected int IntEingabe()
@@ -40,7 +39,7 @@ namespace BruchrechnerOOP.View
 
         public void GebeBruchAus()
         {
-            Console.WriteLine(Bruch.Zaehler + "/" + Bruch.Nenner);
+            Console.WriteLine(Bruch. + "/" + Bruch.Nenner);
         }
 
     }

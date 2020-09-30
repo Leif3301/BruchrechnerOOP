@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Controller.cs" />
     <Compile Include="Model\Bruch.cs" />
     <Compile Include="Programm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -52,5 +53,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

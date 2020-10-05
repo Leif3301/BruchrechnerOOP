@@ -1,4 +1,13 @@
-﻿using BruchrechnerOOP.View;
+﻿/*
+ Autor:         Dennis Frank
+ Dateiname:     Main.cs
+ Klasse:        IA219
+ Datum:         20.09.2020
+ Beschreibung:  Diese Klasse dient als Einstiegsklasse
+ Änderung:      05.10.2020
+ */
+using BruchrechnerOOP.Controller;
+using BruchrechnerOOP.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +18,17 @@ namespace BruchrechnerOOP
 {
     class Programm
     {
+        private Programmsteuerung _programmsteuerung;
+
+        public Programmsteuerung Programmsteuerung
+        {
+            get { return _programmsteuerung; }
+            set { _programmsteuerung = value; }
+        }
         static void Main(string[] args)
         {
-            //Bruch bruch1 = new Bruch(7, 5);
-            //Bruch bruch2 = new Bruch(5, 4);
-
-            //Console.WriteLine("Ergebnis Multiplikation: " + bruch1.Multipliziere(bruch2).GebeAus());
-            //Console.WriteLine("Ergebnis Division: " + bruch1.Dividiere(bruch2).GebeAus());
-            //Console.WriteLine("Ergebnis Addition: " + bruch1.Addiere(bruch2).GebeAus());
-            //Console.WriteLine("Ergebnis Subtraktion: " + bruch1.Subtrahiere(bruch2).GebeAus());
-
-            Userinterface ui = new Userinterface();
-            bruch1 = ui.LeseBruchEin();
-            
-
-            ui.LeseBruchEin();
-            Bruch bruch2 = new Bruch(ui.Bruch.Zaehler, ui.Bruch.Nenner);
-
-            
-            bruch1.Multipliziere(bruch2);
-
-            Console.ReadKey(true); // TODO: kommentieren
+            Programmsteuerung verwalter = new Programmsteuerung();
+            verwalter.run();
         }
     }
 }

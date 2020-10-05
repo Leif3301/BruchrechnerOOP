@@ -20,8 +20,16 @@ namespace BruchrechnerOOP
         private int _zaehler;
         private int _nenner;
 
-        public int Zaehler { get; set; }
-        public int Nenner { get; set; }
+        public int Zaehler
+        {
+            get { return _zaehler; }
+            set { _zaehler = value; }
+        }
+        public int Nenner
+        {
+            get { return _nenner; }
+            set { _nenner = value; }
+        }
 
         public Bruch()
         {

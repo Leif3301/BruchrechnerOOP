@@ -19,7 +19,6 @@ namespace BruchrechnerOOP.Controller
     {
         private Bruch[] _brueche;
         private Userinterface _userinterface;
-        Userinterface userinterface = new Userinterface();
 
         public Bruch[] Brueche
         {
@@ -42,18 +41,18 @@ namespace BruchrechnerOOP.Controller
             bool programmFortsetzen = true;
 
             // Ausgeben des Startbildschirms
-            userinterface.GebeSplashScreenAus();
+            _userinterface.GebeSplashScreenAus();
             System.Threading.Thread.Sleep(1300);
 
             // Fußgesteuerte Hauptschleife
             do
             {
                 // Ausgabe des Menues
-                string auswahl = userinterface.GebeMenueAus();
+                string auswahl = Userinterface.GebeMenueAus();
                 Console.Clear();
 
                 // Fuehrt die gewaehlte Menue-Option aus
-                userinterface.WerteMenueEingabeAus(auswahl);
+                Userinterface.WerteMenueEingabeAus(auswahl);
 
                 // Abfrage ob Programm fortgesetzt werden soll
                 Console.WriteLine("\nProgramm fortsetzen? ( j / n )");
@@ -81,7 +80,7 @@ namespace BruchrechnerOOP.Controller
 
         public void BeendeProgramm()
         {
-            userinterface.GebeBeendeBildschirmAus();
+            Userinterface.GebeBeendeBildschirmAus();
             System.Threading.Thread.Sleep(2000);
 
             Environment.Exit(0);
@@ -89,7 +88,8 @@ namespace BruchrechnerOOP.Controller
 
         public void BruecheAddieren()
         {
-
+            Userinterface.LeseBruchEin();
+            
         }
 
         public void BruecheSubtrahieren()

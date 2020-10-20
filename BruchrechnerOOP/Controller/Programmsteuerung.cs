@@ -11,7 +11,7 @@ using BruchrechnerOOP.View;
 using System;
 
 namespace BruchrechnerOOP.Controller
-{   
+{
     // Fungiert als Verbindungsstück zwischen View- und Modelbestandteilen
     class Programmsteuerung
     {

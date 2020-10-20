@@ -7,11 +7,6 @@
  Änderung:      23.09.2020, 15.10.2020, 20.10.2020
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BruchrechnerOOP.Model
 {
@@ -121,7 +116,7 @@ namespace BruchrechnerOOP.Model
             ergebnis.Nenner = this.Nenner * bruch.Nenner;
 
             ergebnis = Kuerze(ergebnis.Zaehler, ergebnis.Nenner);
-            
+
             return ergebnis;
         }
 

@@ -9,11 +9,6 @@
 using BruchrechnerOOP.Controller;
 using BruchrechnerOOP.Model;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BruchrechnerOOP.View
 {
@@ -57,8 +52,8 @@ namespace BruchrechnerOOP.View
          */
         protected int KonvertiereEingabeZuInt()
         {
-                int eingabe = Convert.ToInt32(LeseTextEin());
-                return eingabe;
+            int eingabe = Convert.ToInt32(LeseTextEin());
+            return eingabe;
         }
 
         /**
@@ -66,12 +61,12 @@ namespace BruchrechnerOOP.View
          */
         public Bruch LeseBruchEin(int i)
         {
-                GebeTextAus($"\nBitte {i}. Zähler eingeben: ");
-                int zaehler = KonvertiereEingabeZuInt();
-                GebeTextAus($"\nBitte {i}. Nenner eingeben: ");
-                int nenner = KonvertiereEingabeZuInt();
-                Bruch bruch = new Bruch(zaehler, nenner);
-                return bruch;
+            GebeTextAus($"\nBitte {i}. Zähler eingeben: ");
+            int zaehler = KonvertiereEingabeZuInt();
+            GebeTextAus($"\nBitte {i}. Nenner eingeben: ");
+            int nenner = KonvertiereEingabeZuInt();
+            Bruch bruch = new Bruch(zaehler, nenner);
+            return bruch;
         }
 
         /**

@@ -7,12 +7,6 @@
  Änderung:      05.10.2020, 15.10.2020, 20.10.2020
  */
 using BruchrechnerOOP.Controller;
-using BruchrechnerOOP.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BruchrechnerOOP
 {

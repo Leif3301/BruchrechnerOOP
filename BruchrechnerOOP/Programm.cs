@@ -3,8 +3,8 @@
  Dateiname:     Main.cs
  Klasse:        IA219
  Datum:         20.09.2020
- Beschreibung:  Diese Klasse dient als Einstieg in das Programm
- Änderung:      05.10.2020
+ Beschreibung:  Dient als Hauptklasse
+ Änderung:      05.10.2020, 15.10.2020, 20.10.2020
  */
 using BruchrechnerOOP.Controller;
 using BruchrechnerOOP.View;
@@ -16,12 +16,14 @@ using System.Threading.Tasks;
 
 namespace BruchrechnerOOP
 {
+    // Dient als Hauptklasse
     class Programm
     {
+        // Fungiert als Einstieg in das Programm
         static void Main(string[] args)
         {
-            Programmsteuerung verwalter = new Programmsteuerung();
-            verwalter.run();
+            Programmsteuerung programmsteuerung = new Programmsteuerung();
+            programmsteuerung.run();
         }
     }
 }

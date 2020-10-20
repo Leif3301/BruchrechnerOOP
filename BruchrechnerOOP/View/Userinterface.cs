@@ -3,42 +3,49 @@
  Dateiname:     Userinterface.cs
  Klasse:        IA219
  Datum:         28.09.2020
- Beschreibung:  Diese Klasse definiert das Userinterface
- Änderung:      05.10.2020
+ Beschreibung:  Dient als Schnittstelle zwischen Computer und Mensch
+ Änderung:      05.10.2020, 15.10.2020, 20.10.2020
  */
 using BruchrechnerOOP.Controller;
+using BruchrechnerOOP.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BruchrechnerOOP.View
 {
+    // Dient als Schnittstelle zwischen Computer und Mensch
     class Userinterface
     {
         private Bruch _bruch;
         private string _text;
-        Bruch bruch = new Bruch();
 
         public Bruch Bruch
         {
             get { return _bruch; }
             set { _bruch = value; }
         }
+
         public string Text
         {
             get { return _text; }
             set { _text = value; }
         }
 
+        /**
+         * Standardkonstruktor
+         */
         public Userinterface()
         {
-            bruch.Zaehler = 0;
-            bruch.Nenner = 0;
-            Text = "--";
+
         }
 
+        /**
+         * Spezialkonstruktor
+         */
         public Userinterface(Bruch bruch, string text)
         {
             this.Bruch = bruch;
@@ -50,29 +57,29 @@ namespace BruchrechnerOOP.View
          */
         protected int KonvertiereEingabeZuInt()
         {
-            int eingabe = Convert.ToInt32(LeseTextEin());
-            return eingabe;
+                int eingabe = Convert.ToInt32(LeseTextEin());
+                return eingabe;
         }
 
         /**
          * Liest einen Bruch ein
          */
-        public Bruch LeseBruchEin()
-        {          
-            Console.WriteLine("Bitte Zähler eingeben: ");
-            int zaehler = KonvertiereEingabeZuInt();
-            Console.WriteLine("Bitte Nenner eingeben: ");
-            int nenner = KonvertiereEingabeZuInt();
-            Bruch bruch = new Bruch(zaehler, nenner);
-            return bruch;
+        public Bruch LeseBruchEin(int i)
+        {
+                GebeTextAus($"\nBitte {i}. Zähler eingeben: ");
+                int zaehler = KonvertiereEingabeZuInt();
+                GebeTextAus($"\nBitte {i}. Nenner eingeben: ");
+                int nenner = KonvertiereEingabeZuInt();
+                Bruch bruch = new Bruch(zaehler, nenner);
+                return bruch;
         }
 
         /**
          * Gibt einen Bruch aus
          */
-        public void GebeBruchAus()
+        public void GebeBruchAus(Bruch bruch)
         {
-            GebeTextAus(Bruch.Zaehler + "/" + Bruch.Nenner);
+            GebeTextAus($"{bruch.Zaehler}/{bruch.Nenner}");
         }
 
         /**
@@ -95,6 +102,9 @@ namespace BruchrechnerOOP.View
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        /**
+         * Gibt den Bildschirm zum Beenden aus
+         */
         public void GebeBeendeBildschirmAus()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -161,15 +171,21 @@ namespace BruchrechnerOOP.View
             }
         }
 
-        private string LeseTextEin()
+        /**
+         * Liest Text von der Konsle ein
+         */
+        public string LeseTextEin()
         {
-            string textEingabe = Console.ReadLine();
-            return textEingabe;
+            Text = Console.ReadLine();
+            return Text;
         }
 
-        private void GebeTextAus(string eingabe)
+        /**
+         * Gibt Text auf der Konsole aus
+         */
+        public void GebeTextAus(string Text)
         {
-            Console.WriteLine(eingabe);
+            Console.WriteLine(Text);
         }
     }
 }

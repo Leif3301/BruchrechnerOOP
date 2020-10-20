@@ -3,8 +3,8 @@
  Dateiname:     Bruch.cs
  Klasse:        IA219
  Datum:         20.09.2020
- Beschreibung:  Diese Klasse definiert einen Bruch
- Änderung:      23.09.2020
+ Beschreibung:  Definiert einen Bruch und stellt Rechenoperationen zur verfügung
+ Änderung:      23.09.2020, 15.10.2020, 20.10.2020
  */
 using System;
 using System.Collections.Generic;
@@ -13,37 +13,43 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BruchrechnerOOP
+namespace BruchrechnerOOP.Model
 {
+    // Definiert einen Bruch und stellt Rechenoperationen zur verfügung
     class Bruch
     {
         private int _zaehler;
         private int _nenner;
 
+        // Zugriffsmethode für den Zähler
         public int Zaehler
         {
             get { return _zaehler; }
             set { _zaehler = value; }
         }
+
+        // Zugriffsmethode für den Nenner
         public int Nenner
         {
             get { return _nenner; }
             set { _nenner = value; }
         }
 
+        // Standardkonstruktor
         public Bruch()
         {
             Zaehler = 1;
             Nenner = 1;
         }
 
+        // Spezialkonstruktor
         public Bruch(int zaehler, int nenner)
         {
             if (nenner == 0)
             {
                 Console.WriteLine("Der Nenner darf nicht 0 sein!");
-                Console.WriteLine("Setze den Bruch auf 0.");
-                Zaehler = 0;
+                Console.WriteLine("Setze den Bruch auf 1.");
+                Zaehler = 1;
                 Nenner = 1;
             }
             else
@@ -59,6 +65,7 @@ namespace BruchrechnerOOP
             }
         }
 
+        // Ermittelt den größten gemeinsamen Teiler
         protected int BerechneGgt(int zahl1, int zahl2)
         {
             if (zahl1 == zahl2)
@@ -88,6 +95,7 @@ namespace BruchrechnerOOP
             }
         }
 
+        // Kürzt einen Bruch mit dem größten gemeinsamen Teiler
         protected Bruch Kuerze(int ergebnisZaehler, int ergebnisNenner)
         {
             Bruch ergebnisGekuerzt = new Bruch();
@@ -104,6 +112,7 @@ namespace BruchrechnerOOP
             return ergebnisGekuerzt;
         }
 
+        // Führt eine Multiplikation aus
         public Bruch Multipliziere(Bruch bruch)
         {
             Bruch ergebnis = new Bruch();
@@ -116,6 +125,7 @@ namespace BruchrechnerOOP
             return ergebnis;
         }
 
+        // Führt eine Division aus
         public Bruch Dividiere(Bruch bruch)
         {
             Bruch ergebnis = new Bruch();
@@ -128,6 +138,7 @@ namespace BruchrechnerOOP
             return ergebnis;
         }
 
+        // Führt eine Addition aus
         public Bruch Addiere(Bruch bruch)
         {
             Bruch ergebnis = new Bruch();
@@ -144,6 +155,7 @@ namespace BruchrechnerOOP
             return ergebnis;
         }
 
+        // Führt eine Subtraktion aus
         public Bruch Subtrahiere(Bruch bruch)
         {
             Bruch ergebnis = new Bruch();
@@ -160,9 +172,15 @@ namespace BruchrechnerOOP
             return ergebnis;
         }
 
-        public string GebeAus()
+        // Weist das Ergebnis zu
+        public Bruch Zuweisung(Bruch bruch)
         {
-            return Zaehler + " / " + Nenner;
+            Bruch ergebnis = new Bruch();
+
+            this.Zaehler = ergebnis.Zaehler = bruch.Zaehler;
+            this.Nenner = ergebnis.Nenner = bruch.Nenner;
+
+            return ergebnis;
         }
     }
 }

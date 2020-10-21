@@ -4,7 +4,7 @@
  Klasse:        IA219
  Datum:         28.09.2020
  Beschreibung:  Dient als Schnittstelle zwischen Computer und Mensch
- Änderung:      05.10.2020, 15.10.2020, 20.10.2020
+ Änderung:      05.10.2020, 15.10.2020, 20.10.2020, 21.10.2020
  */
 using BruchrechnerOOP.Controller;
 using BruchrechnerOOP.Model;
@@ -18,47 +18,41 @@ namespace BruchrechnerOOP.View
         private Bruch _bruch;
         private string _text;
 
+        // Zugriffsmethode für einen Bruch
         public Bruch Bruch
         {
             get { return _bruch; }
             set { _bruch = value; }
         }
 
+        // Zugriffsmethode für einen Text
         public string Text
         {
             get { return _text; }
             set { _text = value; }
         }
 
-        /**
-         * Standardkonstruktor
-         */
+        // Standardkonstruktor
         public Userinterface()
         {
 
         }
 
-        /**
-         * Spezialkonstruktor
-         */
+        // Spezialkonstruktor
         public Userinterface(Bruch bruch, string text)
         {
             this.Bruch = bruch;
             this.Text = text;
         }
 
-        /**
-         * Konvertiert die Benutzereingabe in einen Integer
-         */
+        // Konvertiert die Benutzereingabe in einen Integer
         protected int KonvertiereEingabeZuInt()
         {
             int eingabe = Convert.ToInt32(LeseTextEin());
             return eingabe;
         }
 
-        /**
-         * Liest einen Bruch ein
-         */
+        // Liest einen Bruch ein
         public Bruch LeseBruchEin(int i)
         {
             GebeTextAus($"\nBitte {i}. Zähler eingeben: ");
@@ -69,17 +63,13 @@ namespace BruchrechnerOOP.View
             return bruch;
         }
 
-        /**
-         * Gibt einen Bruch aus
-         */
+        // Gibt einen Bruch aus
         public void GebeBruchAus(Bruch bruch)
         {
             GebeTextAus($"{bruch.Zaehler}/{bruch.Nenner}");
         }
 
-        /**
-         * Gibt den Startbildschirm aus
-         */
+        // Gibt den Startbildschirm aus
         public void GebeSplashScreenAus()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -97,9 +87,7 @@ namespace BruchrechnerOOP.View
             Console.ForegroundColor = ConsoleColor.White;
         }
 
-        /**
-         * Gibt den Bildschirm zum Beenden aus
-         */
+        // Gibt den Bildschirm zum Beenden aus
         public void GebeBeendeBildschirmAus()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -111,9 +99,7 @@ namespace BruchrechnerOOP.View
             GebeTextAus("######################################################################");
         }
 
-        /**
-         * Gibt das Menue aus
-         */
+        // Gibt das Menue aus
         public string GebeMenueAus()
         {
             GebeTextAus("Wählen Sie aus einer der folgenden Möglichkeiten:");
@@ -137,9 +123,7 @@ namespace BruchrechnerOOP.View
             return Console.ReadKey().KeyChar.ToString();
         }
 
-        /**
-         * Wertet die gewaehlte Eingabe aus
-         */
+        // Wertet die gewaehlte Menüeingabe aus
         public void WerteMenueEingabeAus(string eingabe)
         {
             Programmsteuerung programmsteuerung = new Programmsteuerung();
@@ -166,18 +150,14 @@ namespace BruchrechnerOOP.View
             }
         }
 
-        /**
-         * Liest Text von der Konsle ein
-         */
+        // Liest Text von der Konsle ein
         public string LeseTextEin()
         {
             Text = Console.ReadLine();
             return Text;
         }
 
-        /**
-         * Gibt Text auf der Konsole aus
-         */
+        // Gibt Text auf der Konsole aus
         public void GebeTextAus(string Text)
         {
             Console.WriteLine(Text);

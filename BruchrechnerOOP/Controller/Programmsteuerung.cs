@@ -4,7 +4,7 @@
  Klasse:        IA219
  Datum:         05.10.2020
  Beschreibung:  Fungiert als Verbindungsstück zwischen View- und Modelbestandteilen.
- Änderung:      15.10.2020, 20.10.2020
+ Änderung:      15.10.2020, 20.10.2020, 21.10.2020
  */
 using BruchrechnerOOP.Model;
 using BruchrechnerOOP.View;

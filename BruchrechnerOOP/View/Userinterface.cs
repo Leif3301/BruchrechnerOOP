@@ -48,7 +48,11 @@ namespace BruchrechnerOOP.View
         // Konvertiert die Benutzereingabe in einen Integer
         protected int KonvertiereEingabeZuInt()
         {
-            int eingabe = Convert.ToInt32(LeseTextEin());
+            int eingabe;
+            while (!int.TryParse(Console.ReadLine(), out eingabe))
+            {
+                Console.WriteLine("Bitte eine Ganzzahl eingeben!");
+            }
             return eingabe;
         }
 

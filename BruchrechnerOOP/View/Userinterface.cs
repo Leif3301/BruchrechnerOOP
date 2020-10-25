@@ -77,17 +77,17 @@ namespace BruchrechnerOOP.View
         public void GebeSplashScreenAus()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            GebeTextAus("######################################################################");
-            GebeTextAus("###########                ###########################################");
-            GebeTextAus("###########  BRUCHRECHNER  ###########################################");
-            GebeTextAus("###########                ###########################################");
-            GebeTextAus("######################################################################");
-            GebeTextAus("########################################                   ###########");
-            GebeTextAus("########################################  by Dennis Frank  ###########");
-            GebeTextAus("########################################                   ###########");
-            GebeTextAus("######################################################################");
-            GebeTextAus("                                                                      ");
-            GebeTextAus("                                                                      ");
+            GebeTextAus(@"######################################################################");
+            GebeTextAus(@"###########                ###########################################");
+            GebeTextAus(@"###########  BRUCHRECHNER  ###########################################");
+            GebeTextAus(@"###########                ###########################################");
+            GebeTextAus(@"######################################################################");
+            GebeTextAus(@"########################################                   ###########");
+            GebeTextAus(@"########################################  by Dennis Frank  ###########");
+            GebeTextAus(@"########################################                   ###########");
+            GebeTextAus(@"######################################################################");
+            GebeTextAus(@"                                                                      ");
+            GebeTextAus(@"                                                                      ");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
@@ -107,7 +107,7 @@ namespace BruchrechnerOOP.View
         public string GebeMenueAus()
         {
             GebeTextAus("Wählen Sie aus einer der folgenden Möglichkeiten:");
-            System.Threading.Thread.Sleep(180);
+            System.Threading.Thread.Sleep(200);
 
             GebeTextAus("");
             GebeTextAus("[A]ddieren zweier Brüche");

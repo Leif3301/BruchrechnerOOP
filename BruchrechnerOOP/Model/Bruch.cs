@@ -52,42 +52,19 @@ namespace BruchrechnerOOP.Model
                 this.Zaehler = zaehler;
                 this.Nenner = nenner;
             }
-
-            if (Nenner < 0)
-            {
-                Zaehler = -Zaehler;
-                Nenner = -Nenner;
-            }
         }
 
         // Ermittelt den größten gemeinsamen Teiler
-        protected int BerechneGgt(int zahl1, int zahl2)
+        protected int BerechneGgt(int a, int b)
         {
-            if (zahl1 == zahl2)
+            while (a != 0 && b != 0)
             {
-                return zahl1;
+                if (a > b)
+                    a %= b;
+                else
+                    b %= a;
             }
-            else
-            {
-                while (zahl1 != zahl2)
-                {
-                    if (zahl1 > zahl2)
-                    {
-                        if ((zahl1 - zahl2) > 0)
-                        {
-                            zahl1 -= zahl2;
-                        }
-                    }
-                    else
-                    {
-                        if ((zahl2 - zahl1) > 0)
-                        {
-                            zahl2 -= zahl1;
-                        }
-                    }
-                }
-                return zahl1;
-            }
+            return a | b;
         }
 
         // Kürzt einen Bruch mit dem größten gemeinsamen Teiler
@@ -95,8 +72,10 @@ namespace BruchrechnerOOP.Model
         {
             Bruch ergebnisGekuerzt = new Bruch();
 
-            int ggt = BerechneGgt(ergebnisZaehler, ergebnisNenner);
+            int tempErgebnisZaehler = Math.Abs(ergebnisZaehler);
+            int tempErgebnisNenner = Math.Abs(ergebnisNenner);
 
+            int ggt = BerechneGgt(tempErgebnisZaehler, tempErgebnisNenner);
 
             ergebnisZaehler /= ggt;
             ergebnisNenner /= ggt;

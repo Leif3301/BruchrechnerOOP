@@ -84,9 +84,16 @@ namespace BruchrechnerOOP.Controller
 
                 // Abfrage ob Programm fortgesetzt werden soll
                 Console.WriteLine("\nProgramm fortsetzen? ( j / n )");
+                bool firstRun = true;
                 string eingabe = Console.ReadKey().KeyChar.ToString();
                 do
                 {
+                    if(!firstRun)
+                    {
+                        Console.WriteLine("\nProgramm fortsetzen? ( j / n )");
+                        eingabe = Console.ReadKey().KeyChar.ToString();
+                    }
+
                     switch (eingabe)
                     {
                         case "j":
@@ -96,7 +103,8 @@ namespace BruchrechnerOOP.Controller
                             programmFortsetzen = false;
                             break;
                         default:
-                            Console.WriteLine("Bitte eine gültige Eingabe machen!");
+                            Console.WriteLine("\nBitte eine gültige Eingabe machen!");
+                            firstRun = false;
                             break;
                     }
                 } while (!(eingabe.Equals("j") || eingabe.Equals("n")));
